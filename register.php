@@ -1,7 +1,7 @@
 <?php
 //avvia la Sessione
-session_start();
 include("iot_park.php");
+
 mysqli_select_db($conn,$db_database);
 //prendo i dati con il metodo post
 $username = $_POST["username"];
