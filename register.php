@@ -9,7 +9,7 @@ $password = $_POST["password"];
 $password=md5($password);
 
 
-if(isset($_POST["username"]) && isset($_POST["password"])&& isset($_POST["ruolo"])){
+if(isset($_POST["username"]) && isset($_POST["password"])){
   $result = mysqli_query($conn, "INSERT INTO utente(username,password) VALUES(\"".$username."\", \"".$password."\")");
         if($result){
           $res=array("status"=>"OK", );
