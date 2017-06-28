@@ -1,4 +1,5 @@
 <?php
+//includo il db
 include("iot_park.php");
 mysqli_select_db($conn,$db_database);
 
