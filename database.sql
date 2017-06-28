@@ -1,6 +1,6 @@
-create table utenti(
+create table utente(
 id_usr int(11) auto_increment primary key,
-username varchar(30),
+username varchar(30) unique,
 password varchar(30),
 logged tinyint(1) unsigned zerofill not null default '0'
 ) engine = "InnoDB";
