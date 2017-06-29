@@ -13,23 +13,20 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
   //se esiste già salta la query successiva e manda lo stato EXISTS al json_encode
   if(mysqli_num_rows($verifica)>0){
     $res =array("status"=>"EXISTS", );
-  }else{
+  }
+  else{
     //altrimenti inserisce i dati sul db se riesce...
-  $result = mysqli_query($conn, "INSERT INTO utente(username,password) VALUES(\"".$username."\", \"".$password."\")");
-        if($result){
-          $res=array("status"=>"OK", );
-          $json=json_encode($res);
-          echo $json;
-        }else{
-    //...oppure no!
-  $res=array(
-    "status"=>"NOT",
-  );
+    $result = mysqli_query($conn, "INSERT INTO utente(username,password) VALUES(\"".$username."\", \"".$password."\")");
+      if($result){
+        $res=array("status"=>"OK", );
+      }
+      else{//...oppure no!
+        $res=array("status"=>"NOT",);
+      }
   }
-  }
-  //prende i dati, li chiude in un json e li manda
-  $json=json_encode($res);
-  echo $json;
+//prende i dati, li chiude in un json e li manda
+$json=json_encode($res);
+echo $json;
 }
 
 ?>
