@@ -10,5 +10,5 @@ id_par int(11) auto_increment primary key,
 stato tinyint(1),
 utente int(11),
 INDEX new_utente(utente),
-FOREIGN KEY (utente) REFERENCES utenti(id_usr)
+FOREIGN KEY (utente) REFERENCES utente(id_usr)
 )engine="InnoDB";
